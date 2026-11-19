@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Explore the music, art, and creative projects of Justin Lyric Thayer."
+  >
+
+  <title>Justin Lyric — All the good stuff</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="desktop-label">
+    <span class="tiny-mark">✳</span>
+    INDEPENDENTLY TAWDRY BY NATURE
+  </div>
+
+  <main class="profile mx-auto relative">
+    <nav
+      class="flex justify-between items-center"
+      aria-label="Page actions"
+    >
+      <a
+        href="#collection"
+        class="icon-button"
+        aria-label="Explore links"
+      >
+        <i data-icon="layout-grid"></i>
+      </a>
+
+      <span class="nav-label">EZEKIEL 51:50 SCENT</span>
+
+      <button
+        class="icon-button"
+        id="share"
+        aria-label="Share this page"
+      >
+        <i data-icon="share-2"></i>
+      </button>
+    </nav>
+
+    <header class="text-center">
+      <div class="avatar-wrap">
+        <img id="avatar" alt="Justin Lyric logo">
+        <span class="status-dot"></span>
+      </div>
+
+      <div class="eyebrow">A LITTLE BIT OF EVERYTHING</div>
+
+      <h1 id="name"></h1>
+      <p class="tagline" id="tagline"></p>
+      <p class="bio" id="bio"></p>
+
+      <div
+        class="socials flex justify-center"
+        id="socials"
+      ></div>
+
+      <div class="header-rule">
+        <span>GOOD TO BE SCENE</span>
+      </div>
+    </header>
+
+    <div id="collection">
+      <div class="section-label">
+        <span>01 / EXPLORE</span>
+        <span>FOLLOW YOUR CURIOSITY ↘</span>
+      </div>
+
+      <div id="links"></div>
+
+      <!-- Single audio player populated by app.js -->
+      <section
+        id="single"
+        class="card audio-card"
+      ></section>
+      
+      <!-- Playlist populated by app.js -->
+      <section class="card playlist">
+        <div class="playlist-heading flex items-center gap-3">
+          <span class="cover">
+            <i data-icon="list-music"></i>
+          </span>
+
+          <div>
+            <div class="eyebrow">MORE MUSIC</div>
+            <h2>Take a Fantastic Voyage, Bon Voyage</h2>
+          </div>
+        </div>
+
+        <div id="tracks"></div>
+        <div id="playlist-controls"></div>
+      </section>
+
+      <div class="section-label">
+        <span>03 / MTV</span>
+        <i data-icon="eye"></i>
+      </div>
+
+      <!-- Video module -->
+      <section class="card media-card">
+        <div class="video-wrap">
+          <video
+            id="video"
+            controls
+            preload="none"
+            playsinline
+           
+          ></video>
+
+          <span class="media-badge">CODE BASIC</span>
+        </div>
+
+        <div class="media-caption">
+          <div>
+            <h2 id="video-title"></h2>
+            <p id="video-description"></p>
+          </div>
+
+          <a
+            id="video-link"
+            class="arrow"
+            aria-label="Visit video page"
+          >↗</a>
+        </div>
+      </section>
+
+      <!-- Gallery module -->
+      <section class="card media-card">
+        <div id="gallery" class="gallery"></div>
+
+        <div class="media-caption">
+          <div>
+            <div class="eyebrow">FROM THE SHOP</div>
+            <h2 id="gallery-title"></h2>
+            <p id="gallery-description"></p>
+          </div>
+
+          <a
+            id="gallery-link"
+            class="arrow"
+            aria-label="Visit photography page"
+          >↗</a>
+        </div>
+      </section>
+
+      <a
+        class="contact flex items-center justify-between"
+        href="mailto:jlyric@me.com"
+        id="contact"
+      >
+        <span>
+          Got something in mind?
+          <strong>Let’s make it happen.</strong>
+        </span>
+
+        <i data-icon="arrow-up-right"></i>
+      </a>
+    </div>
+
+    <footer class="text-center">
+      <img id="footer-logo" alt="Logo">
+
+      <p id="footer-description"></p>
+
+      <div
+        id="footer-socials"
+        class="socials flex justify-center"
+      ></div>
+
+      <small>
+        © <span id="year"></span>
+        <span id="footer-name"></span>
+        <span class="footer-dot">·</span>
+        MADE WITH INTENTION
+      </small>
+    </footer>
+  </main>
+
+  <!-- Fixed QR code populated by app.js -->
+  <aside id="qr-panel">
+    <div id="qrcode"></div>
+
+    <div>
+      <strong>
+        FROM DOME<br>
+        TO FONE.
+      </strong>
+
+      <p id="qr-label"></p>
+    </div>
+  </aside>
+
+  <div
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+  <!-- Gallery image viewer -->
+  <dialog id="lightbox">
+    <button
+      id="close-lightbox"
+      aria-label="Close image"
+    >×</button>
+
+    <img alt="Expanded gallery artwork">
+  </dialog>
+
+  <!-- Configuration must load before application code -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
